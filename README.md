@@ -1,2 +1,2 @@
 # Milan Grahovac CV
-https://milangrahovac.github.io/my-cv/
+https://milangrahovac.github.io/cv/
