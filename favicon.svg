@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    rect { fill: #0d1117; }
+    text { fill: #39d353; }
+    @media (prefers-color-scheme: light) {
+      rect { fill: #ffffff; }
+      text { fill: #1a7f37; }
+    }
+  </style>
+  <rect width="32" height="32" rx="6"/>
+  <text
+    x="16"
+    y="22"
+    font-family="'Segoe UI', system-ui, -apple-system, sans-serif"
+    font-size="13"
+    font-weight="700"
+    text-anchor="middle"
+    letter-spacing="0.5"
+  >MG</text>
+</svg>

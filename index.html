@@ -1,154 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milan Grahovac — SRE</title>
+    <meta name="author" content="Milan Grahovac">
+    <meta name="description" content="Milan Grahovac — Site Reliability Engineer. Building reliable, scalable infrastructure and automating everything in between.">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Milan Grahovac</title>
+    <script>
+        try {
+            var t = localStorage.getItem('theme');
+            document.documentElement.setAttribute('data-theme', t || 'dark');
+        } catch (_) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
 </head>
-
 <body>
+    <button type="button" class="theme-toggle" aria-label="Toggle theme">
+        <!-- Sun (shown in dark mode to switch to light) -->
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon (shown in light mode to switch to dark) -->
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+    <div class="container">
 
-    <section>
-        <div class="image-box">
-            <img src="imgs/milan.jpeg" height="350px">
-        </div>
-        <h1>Milan</h1> 
-        <h1>Grahovac</h1>
-    </section>
-        
+        <!-- Hero -->
+        <header class="hero">
+            <div class="hero-left">
+                <img src="images/photo.png" alt="Milan Grahovac" class="avatar">
+            </div>
+            <div class="hero-text">
+                <h1>Milan Grahovac</h1>
+                <p class="title">Site Reliability Engineer</p>
+                <p class="bio">Building reliable, scalable infrastructure and automating everything in between.</p>
+                <div class="pipeline" aria-hidden="true">
+                    <div class="pipeline-step" data-step="0">
+                        <span class="pipeline-dot"></span>
+                        <span class="pipeline-label">checkout</span>
+                    </div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step" data-step="1">
+                        <span class="pipeline-dot"></span>
+                        <span class="pipeline-label">build</span>
+                    </div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step" data-step="2">
+                        <span class="pipeline-dot"></span>
+                        <span class="pipeline-label">test</span>
+                    </div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step" data-step="3">
+                        <span class="pipeline-dot"></span>
+                        <span class="pipeline-label">push</span>
+                    </div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step" data-step="4">
+                        <span class="pipeline-dot"></span>
+                        <span class="pipeline-label">deploy</span>
+                    </div>
+                    <span class="pipeline-arrow">→</span>
+                    <div class="pipeline-step" data-step="5">
+                        <span class="pipeline-dot"></span>
+                        <span class="pipeline-label">live</span>
+                    </div>
+                </div>
+                <div class="socials">
+                    <a href="mailto:grahovac85@gmail.com" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        grahovac85@gmail.com
+                    </a>
+                    <a href="https://github.com/milangrahovac" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://de.linkedin.com/in/milan-grahovac" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
+                <p class="location">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Berlin, Germany
+                </p>
+            </div>
+        </header>
 
-    <aside>
+        <main>
 
-        <div id="about">
-            <h1>About Me</h1>
-            <p>
-                I'm an Senior IT specialist with over seven years of diverse experience in the field. 
-                My career journey has taken me through various roles, including working on an IT helpdesk, 
-                being part of an IT infrastructure team, and currently serving in the Endpoint team. 
-                Each of these positions has allowed me to develop a wide array of skills and expertise.
-                <br>
-                <br>
-                I have worked with several tools and technologies, such as Google Admin, Slack Admin, and Mobile Device Management (MDM) 
-                solutions like Kandji, Intune, and Meraki. My responsibilities have included preparing laptops, creating accounts, 
-                onboarding and offboarding users, and maintaining server rooms and network equipment.
-                <br>
-                <br>
-                In addition I have developed a solid foundation in scripting and programming. I write AppScript, Bash and PowerShell scripts, 
-                and I also code in Python and have a basic understanding of Go. My knowledge extends to MySQL and frontend technologies like HTML5 and CSS.
-                <br>
-                <br>
-                In my free time, I enjoy diving deeper into coding projects, often experimenting with Arduino and Raspberry Pi and solving tasks on the LeetCode.com. 
-                I am also dedicated to continuous learning, frequently taking online courses to enhance my skills and stay updated with the latest advancements in the IT industry.
-                You can find some examples of my Python code for the LeetCode coding challenges here: <a href="https://github.com/milangrahovac/leetcode-python">github.com/milangrahovac/leetcode-python</a>.
-                I am open to new opportunities for long-term professional development and growth.
-            </p>
-        </div>
+            <!-- Skills -->
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3>Orchestration</h3>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Kubernetes</li>
+                            <li>Helm</li>
+                            <li>ArgoCD</li>
+                            <li>Argo Workflows</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>CI/CD</h3>
+                        <ul>
+                            <li>GitHub Actions</li>
+                            <li>Terraform</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Cloud</h3>
+                        <ul>
+                            <li>AWS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Observability</h3>
+                        <ul>
+                            <li>Datadog</li>
+                            <li>Grafana</li>
+                            <li>OpsGenie</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Bash</li>
+                            <li>Go</li>
+                            <li>Apps Script</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>IT Admin</h3>
+                        <ul>
+                            <li>Google Workspace Admin</li>
+                            <li>MS Office 365 Admin</li>
+                            <li>1Password Admin</li>
+                            <li>LastPass Admin</li>
+                            <li>Slack Admin</li>
+                            <li>Kandji MDM</li>
+                            <li>Intune MDM</li>
+                            <li>Cisco Meraki</li>
+                            <li>UniFi</li>
+                            <li>PaperCut Admin</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-        <div id="skills">
-            <h1>Skills</h1>
-            <ul>
-                <li>Understanding of PC/Mac hardware setup and configuration</li>
-                <li>Problem-solving oriented approach</li>
-                <li>Google Admin console</li>
-                <li>Lastpass administration</li>
-                <li>MS Office 365 administration</li>
-                <li>Meraki</li>
-                <li>Kandji</li>
-                <li>Intune</li>
-                <li>PaperCut</li>
-                <li>Command line tools (Linux, MacOS)</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Git</li>
-                <li>Python</li>
-                <li>Go (basics)</li>
-                <li>Javascript (basics)</li>
-                <li>Docker</li>
-            </ul>
-        </div>
+            <!-- Experience -->
+            <section class="section">
+                <h2 class="section-title">Experience</h2>
 
-
-        <div id="languages">
-            <h1>Languages</h1>
-
-            <ul>
-                <li>Serbian (Native)</li>
-                <li>English (Fluent)</li>
-                <li>Russian (Fluent)</li>
-                <li>German (B1)</li>
-            </ul>
-        </div>
-
-
-        <div id="work">
-            <h1>Work experience</h1>
-            <ul>
-                <li>N26 GmbH, Berlin, Germany - Dec 2018 - Now</li>
-                    <ul>
-                        <li>Senior IT Operation Specialist, Endpoint team, May 2024 - Now</li>
-                        <li>IT Operation Specialist, Corporate Infrastructure team, Jun 2021- May 2024</li>
-                        <li>IT Helpdesk Specialist, Dec 2018 - Jun 2021</li>
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Junior Site Reliability Engineer <span class="uptime-badge"><span class="uptime-dot"></span>live</span></h3>
+                            <p class="job-company">N26 GmbH, Berlin Germany</p>
+                        </div>
+                        <span class="job-date">Mar 2026 — Present</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Part of the Continuous Deployments (CD) team, responsible for the full deployment pipeline from dev to live.</li>
+                        <li>Managing automated deployments across DEV, Staging, and Live environments using GitHub Actions, ArgoCD, and Helm.</li>
+                        <li>Owning the CD boundary in a split CI/CD model, ensuring clean separation of concerns between integration and deployment.</li>
+                        <li>Orchestrating complex deployment workflows and release automation using Argo Workflows.</li>
+                        <li>Providing support to developers for deployment pipeline issues, troubleshooting failures across GitHub Actions, ArgoCD, Helm, and Argo Workflows.</li>
                     </ul>
-            </ul>
-        </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Senior IT Operations Specialist — Endpoint Team</h3>
+                            <p class="job-company">N26 GmbH, Berlin Germany</p>
+                        </div>
+                        <span class="job-date">Jul 2024 — Mar 2026</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Managing MDMs (Kandji and Intune), setting up and maintaining no-touch laptop deployments.</li>
+                        <li>Google Workspace Administrator, responsible for configuration of the Google environment and DLP policies.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">IT Operations Specialist — Corporate Infrastructure Team</h3>
+                            <p class="job-company">N26 GmbH, Berlin Germany</p>
+                        </div>
+                        <span class="job-date">Jun 2021 — Jul 2024</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Caring for the physical infrastructure (firewalls, switches, access points, servers, printers).</li>
+                        <li>Monitoring status of network equipment and internet connectivity.</li>
+                        <li>Troubleshooting, fixing, replacing, upgrading hardware components.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">IT Helpdesk Specialist — Site Coordinator</h3>
+                            <p class="job-company">N26 GmbH, Berlin Germany</p>
+                        </div>
+                        <span class="job-date">Sep 2020 — Jun 2021</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Coordinating projects with stakeholders.</li>
+                        <li>Onboarding/Offboarding the users, managing accounts and permissions.</li>
+                        <li>Keeping inventory of all equipment.</li>
+                        <li>Diagnosing and troubleshooting tech problems.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Junior IT Helpdesk Specialist</h3>
+                            <p class="job-company">N26 GmbH, Berlin Germany</p>
+                        </div>
+                        <span class="job-date">Dec 2018 — Sep 2020</span>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Managing accounts and permissions.</li>
+                        <li>Installing, configuring and upgrading PC/Mac software.</li>
+                        <li>Keeping inventory of all equipment.</li>
+                        <li>Diagnosing and troubleshooting tech problems.</li>
+                    </ul>
+                </div>
+
+            </section>
 
 
-        <div id="education">
-            <h1>Education</h1>
-            <ul>
-                <li>Master in management of business communications, 2008 - 2012<br>
-                    University of Novi Sad "Mihajlo Pupin"Technical Faculty
-                </li>
-                <li>Management of business communication,  2004 - 2008<br>
-                    University of Novi Sad "Mihajlo Pupin"Technical Faculty
-                </li>
+            <!-- Certifications & Courses -->
+            <section class="section">
+                <h2 class="section-title">Certifications &amp; Online Courses</h2>
+                <div class="courses-grid">
 
-        </div>
+                    <div class="course-group">
+                        <h3 class="course-provider">Udemy</h3>
+                        <ul class="course-list">
+                            <li>Go — The Complete Guide</li>
+                            <li>Docker &amp; Kubernetes: The Practical Guide</li>
+                            <li>Github Actions — The Complete Guide</li>
+                            <li>Kubernetes for the Absolute Beginners — Hands-on</li>
+                            <li>Cisco Meraki Training</li>
+                            <li>Learning VMware vSphere 7 ESXi</li>
+                            <li>Mastering Palo Alto Networks</li>
+                            <li>Active Directory on Windows Server</li>
+                        </ul>
+                    </div>
 
+                    <div class="course-group">
+                        <h3 class="course-provider">GeekBrains</h3>
+                        <ul class="course-list">
+                            <li>Linux Administration of Clients</li>
+                            <li>Databases Basics</li>
+                        </ul>
+                    </div>
 
-        <div id="courses">
-            <h1>Additional programs and courses</h1>
-            <ul>
-                <li><a href="https://www.udemy.com/certificate/UC-4fb7afb7-ba56-4636-9225-01212d150523/">Udemy - Go - The Complete Guide</a></li>
-                <li><a href="https://www.udemy.com/certificate/UC-98549c8a-24fc-42c8-9310-7eedfa1d9b72/">Udemy - Docker & Kubernetes: The Practical Guide</a></li>
-                <li><a href="https://www.udemy.com/certificate/UC-61fa8571-748e-4490-97df-03862ddf322b/">Udemy - Github Actions - The Complete Guide</a></li>
-                <li><a href="https://www.udemy.com/certificate/UC-7175ba15-7695-49c4-95fa-b971cf2d22ad/">Udemy - Kubernetes for the Absolute Beginners - Hands-on</a></li>
-                <li><a href="https://www.udemy.com/certificate/UC-8bc3afcb-41a5-4df6-b87d-b0e3c2080dad/">Udemy - Cisco Meraki Traning</a></li>
-                <li><a href="https://www.udemy.com/certificate/UC-97fe9be1-5214-476f-a676-1c8ad09e6337/">Udemy - Learning VMware vSphere 7 ESXi</a></li>
-                <li><a href="https://www.udemy.com/certificate/UC-b1d23fac-96a8-4746-b071-97db92c6e245/">Udemy - Mastering Palo Alto Networks</a></li>
-                <li><a href="https://www.udemy.com/certificate/UC-a2f35382-1ede-42cd-b8ec-deac7885c2d6/">Udemy - Active Directory on Windows Server</a></li>
-                <li><a href="https://gb.ru/certificates/1131455.en">GeekBrains - Linux administration of clients</a></li>
-                <li><a href="https://gb.ru/certificates/1535172.en">GeekBrains - Databases Basics</a></li>
-                <li><a href="https://www.credly.com/badges/7e5c6513-2036-46fe-a9e4-4a002af9868a/linked_in_profile">Coursera - Google IT Support Certificate (5 courses)</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/professional-cert/P9P63LN3LRNT">Coursera - Google IT Automation with Python (6 courses)</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/verify/QGESJCW2G4LB">Coursera - Managing Google Workspace</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/specialization/UJNXDYHBTVZJ">Coursera - AWS Fundamentals</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/verify/QGESJCW2G4LB">Coursera - Managing Google Workspace</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/verify/G3NVMEZEFL3M">Coursera - AWS Fundamentals: Building Serverless Applications</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/verify/PZCB2DRZCF7R">Coursera - AWS Fundamentals: Migrating to the Cloud</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/specialization/UJNXDYHBTVZJ">Coursera - AWS Fundamentals: Addressing Security Risk</a></li>
-                
-                <!-- <li><a href=""></a></li> -->
-                <!-- <li><a href=""></a></li>
-                <li><a href=""></a></li> -->
-            </ul>
-        </div>
+                    <div class="course-group">
+                        <h3 class="course-provider">Coursera</h3>
+                        <ul class="course-list">
+                            <li>Google IT Support Certificate (5 courses)</li>
+                            <li>Google IT Automation with Python (6 courses)</li>
+                            <li>Managing Google Workspace</li>
+                            <li>AWS Fundamentals</li>
+                            <li>AWS Fundamentals: Building Serverless Applications</li>
+                            <li>AWS Fundamentals: Migrating to the Cloud</li>
+                            <li>AWS Fundamentals: Addressing Security Risk</li>
+                        </ul>
+                    </div>
 
+                </div>
+            </section>
 
-        <div id="contact">
-            <h1>Contact Me</h1>
-            <p><a href="https://www.linkedin.com/in/milan-grahovac/">Linkedin</a></p>
-            <p><a href="mailto:grahovac85@gmail.com">grahovac85@gmail.com</a></p>
-            <p>Github: <a href="github.com/milangrahovac">github.com/milangrahovac</a></p>
-            <p>Address: Berlin, Germany</p>
-        </div>
+            <!-- Languages -->
+            <section class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="languages-grid">
 
-    </aside>
+                    <div class="language-item">
+                        <span class="language-name">Serbian</span>
+                        <span class="language-level">Native</span>
+                    </div>
 
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">Full Professional Proficiency</span>
+                    </div>
 
+                    <div class="language-item">
+                        <span class="language-name">Russian</span>
+                        <span class="language-level">Full Professional Proficiency</span>
+                    </div>
+
+                    <div class="language-item">
+                        <span class="language-name">German</span>
+                        <span class="language-level">Elementary Proficiency</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Master in Management of Business Communications</h3>
+                            <p class="job-company">University of Novi Sad — Mihajlo Pupin Technical Faculty</p>
+                        </div>
+                        <span class="job-date">2008 — 2012</span>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Management of Business Communication</h3>
+                            <p class="job-company">University of Novi Sad — Mihajlo Pupin Technical Faculty</p>
+                        </div>
+                        <span class="job-date">2004 — 2008</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Milan Grahovac &mdash; <a href="mailto:grahovac85@gmail.com">grahovac85@gmail.com</a></p>
+        </footer>
+
+    </div>
+    <script src="scripts/main.js"></script>
 </body>
-
 </html>
